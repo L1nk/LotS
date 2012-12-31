@@ -9,13 +9,14 @@ WHITE = (255, 255, 255)
 GREEN = (  0, 255,   0)
 BLUE  = (  0,   0, 128)
 
-fontObj = pygame.font.Font('../fonts/Supernatural_Knight.ttf', 32)
-textSurfaceObj = fontObj.render('Luke:', True, GREEN, BLUE)
+fontObj = pygame.font.Font('../fonts/SerpentisBlack.ttf', 12)
+textSurfaceObj = fontObj.render('Luke:', True, WHITE, BLUE)
 textRectObj = textSurfaceObj.get_rect()
-textRectObj.center = (200, 150)
+textRectObj.topleft = (10, 230)
 
 while True: #main game loop
     DISPLAYSURF.fill(WHITE)
+    pygame.draw.rect(DISPLAYSURF, BLUE, (5,225,390,70))
     DISPLAYSURF.blit(textSurfaceObj, textRectObj)
     for event in pygame.event.get():
         if event.type == QUIT:
